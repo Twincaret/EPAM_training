@@ -1,4 +1,6 @@
 #pragma once
+#ifndef STRINGCLASS_H
+#define STRINGCLASS_H
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -21,4 +23,6 @@ public:
 	// destructor
 	~StringClass(){}
 };
+
+#endif
 
