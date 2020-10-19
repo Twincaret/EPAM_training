@@ -74,6 +74,8 @@ void Vector::sort()
         v_num[i] = arr_o[i];
     for(int i = odd, j = 0; i <= v_length; i++, j++)
         v_num[i] = arr_e[j];
+    delete arr_o;
+    delete arr_e;
 }
 
 void Vector::output()
