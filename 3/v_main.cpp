@@ -40,7 +40,7 @@ int main() {
 	for (int i = 0; i < 10; i++)
     {
         num_2[i] = rand() % 100;
-        //cout << num_1[i] << " ";
+        //cout << num_2[i] << " ";
     }
 	/*
 	cout << "Input second array: ";
