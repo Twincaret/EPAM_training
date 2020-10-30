@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <random>
 
-D_range::D_range(int n_size, int m_size) { n = n_size; m = m_size; arr = new int*[n]; for(int i = 0; i < n; i++) {arr[i] = new int[m];}; }
+D_range::D_range(const int n_size, const int m_size) { n = n_size; m = m_size; arr = new int*[n]; for(int i = 0; i < n; i++) {arr[i] = new int[m];}; }
 /* ======================================================================================== */
 int D_range::dice_roll() // PRNG
 {
