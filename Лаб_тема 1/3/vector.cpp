@@ -33,8 +33,8 @@ double Vector::findSum()
 
 void Vector::sort()
 {
-	double *arr_o = new double[10];
-	double *arr_e = new double[10];
+	double arr_o[10];
+	double arr_e[10];
 	int odd = 0, even = 0;
 	
 	for(int i = 0; i < v_length; i++)
@@ -71,11 +71,13 @@ void Vector::sort()
 	    }
 	}
     for(int i = 0; i <= odd - 1; i++)
+    {
         v_num[i] = arr_o[i];
+	}
     for(int i = odd, j = 0; i <= v_length; i++, j++)
+    {
         v_num[i] = arr_e[j];
-    delete [] arr_o;
-    delete [] arr_e;
+	}
 }
 
 void Vector::output()

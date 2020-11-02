@@ -1,35 +1,15 @@
-#include <iostream>
-#include <algorithm>
-#include <string>
-using namespace std;
+#include "students.h"
 
-struct student 
+void getData(student *st, int n) 
 {
-	string family;
-	string name;
-	int score[3];
-	int num; // var for family length number && setAttribute func
-};
-
-void showArray(student*, int);
-void setAttribute(student*, int);
-void sortArray(student*, int);
-void showSorted(student*, int);
-
-int main() 
-{
-	cout << "Enter number of students: " << endl;
-	int n;
-	cin >> n;
-	student *st = new student[n];
 	for(int i = 0; i != n; i++) 
 	{
-		cout << "Family: " << endl;
+		cout << "Family: ";
 		cin >> st[i].family;
 		st[i].num = st[i].family.size(); // family length 
-		cout << "Name: " << endl;
+		cout << "Name: ";
 		cin >> st[i].name;
-		cout << "Score: " << endl;
+		cout << "Score: ";
 		int j = 0;
 		do 
 		{
@@ -37,19 +17,7 @@ int main()
 			j++;
 		}while(j != 3);
 		cout << endl;
-	}
-	cout << endl;
-		
-    showArray(st, n);	
-	cout << endl;
-	setAttribute(st, n); // set attribute for sorting depending on the family length:
-	sortArray(st, n);   // even ascending, odd descending
-	showSorted(st, n); // result
-
-	delete[] st;
-	
-	return 0;	
-
+	}	
 }
 
 void showArray(student *st, int n) 
@@ -60,9 +28,9 @@ void showArray(student *st, int n)
 		cout << st[i].name << endl;		
 		for(int j = 0; j != 3; j++) 
 		{
-			cout << st[i].score[j] << " " << endl;
+			cout << st[i].score[j] << " ";
 		}
-		cout << endl;		
+		cout << "\n"  << endl;		
 	}	
 }
 
@@ -83,15 +51,17 @@ void setAttribute(student *st, int n)
 			int max = st[i].score[0];
 			for(int j = 0; j != 3; j++) 
 			{
-				if(max < st[i].score[j]) st[i].num = st[i].score[j];
+				if(max < st[i].score[j]) max = st[i].score[j];
 			}
+			st[i].num = max;
 		} else if(st[i].num % 4 == 2)   // min
 		{
 			int min = st[i].score[0];
 			for(int j = 0; j != 3; j++) 
 			{
-				if(min > st[i].score[j]) st[i].num = st[i].score[j];
+				if(min > st[i].score[j]) min = st[i].score[j];
 			}
+			st[i].num = min;
 		} else if(st[i].num % 4 == 3)   // sum
 		{
 			int sum = 0; 	
@@ -103,12 +73,15 @@ void setAttribute(student *st, int n)
 		}
     }
 }   
+
 /* even odd sort */
+/*
 void sortArray(student *st, int n) { 
 	int arr[n], tmp;
-	for(int i = 0; i != n; i++) {				
-		arr[i] = st[i].num; 	
-	}	
+	for(int i = 0; i != n; i++) 
+	{						 	
+		arr[i] = st[i].num;
+    }
 	int j = 0, odd = sizeof(arr) / sizeof(*arr) - 1;
 	for(int i = 0; i <= odd; i++) 
 	{
@@ -132,12 +105,9 @@ void sortArray(student *st, int n) {
 			odd--;
 			i--;
 		}		
-	}
-	for(int i = 0; i != n; i++) {				
-		st[i].num = arr[i]; 	
-	}
-}
-
+	}	
+} 
+*/
 void showSorted(student *st, int n)
 {
 	for(int i = 0; i != n; i++) 
@@ -148,12 +118,3 @@ void showSorted(student *st, int n)
 		cout << endl;		
 	}	
 }
-
-
-
-
-
-
-
-
-

@@ -55,6 +55,8 @@ int main() {
 	//arr_2.sort();
 	arr_2.output();
 	cout << "\n" << "Sum of elements: " << arr_2.findSum() << endl;
+	delete [] num_1;
+	delete [] num_2;
 
 	return 0;
 }
