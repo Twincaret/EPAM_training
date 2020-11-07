@@ -19,7 +19,7 @@ int main()
     showArray(st, n);	
 	cout << endl;
 	setAttribute(st, n); // set attribute for sorting depending on the family length:
-	//sortArray(st, n);   // even ascending, odd descending
+	sortArray(st, n);   // even ascending, odd descending
 	showSorted(st, n); // result
 	delete[] st;
 	

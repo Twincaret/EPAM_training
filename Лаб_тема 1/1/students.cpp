@@ -74,40 +74,33 @@ void setAttribute(student *st, int n)
     }
 }   
 
-/* even odd sort */
-/*
-void sortArray(student *st, int n) { 
-	int arr[n], tmp;
-	for(int i = 0; i != n; i++) 
-	{						 	
-		arr[i] = st[i].num;
-    }
-	int j = 0, odd = sizeof(arr) / sizeof(*arr) - 1;
-	for(int i = 0; i <= odd; i++) 
-	{
-		tmp = arr[i];
-		if(tmp % 2 == 0)
-		{
-				for(j = i - 1; j >= 0 && arr[j] > tmp; j--)
-				{
-					arr[j + 1] = arr[j];
-				}
-				arr[j + 1] = tmp;
+void sortArray(student *st, int n) 
+{	
+	// sort students by num field
+    for(int i = 0; i < n - 1; i++)
+    { 
+		for(int j = i + 1; j < n; j++)
+		{   
+			// even numbers ascending, odd descending
+			if((st[i].num % 2 == 0 && st[j].num % 2 == 0 && st[i].num > st[j].num) || (st[i].num % 2 && st[j].num % 2 && st[i].num > st[j].num))
+			swap(st[i],st[j]);
 		}
-		else
+	}
+	// even, odd (separately)	
+	for(int i = n - 1; i >= 0; i--) 
+	{
+		for(int j = 0; j < i; j++) 
 		{
-			swap(arr[i], arr[odd]);
-			for(j = odd + 1; j < sizeof(arr) / sizeof(*arr) && arr[j] > tmp; j++)
-			{
-				arr[j - 1] = arr[j];
-			}
-			arr[j - 1] = tmp;
-			odd--;
-			i--;
-		}		
-	}	
-} 
-*/
+			if(st[j].num % 2 != 0) 
+			{				
+				student tmp = st[j];
+				st[j] = st[j + 1];
+				st[j + 1] = tmp;
+		    } 
+		}
+	}				
+}
+
 void showSorted(student *st, int n)
 {
 	for(int i = 0; i != n; i++) 
