@@ -17,12 +17,13 @@ int main()
 	try 
 	{
 		if(n < 0){throw 1;}
+		a.resize(n);
+		std::cout << "Resized array: ";
+		print(a);
+		std::cout << "\n" << std::endl;
 	}
-	catch(int thr){std::cout << "Error n." << thr << ": Value must be >= 0." << std::endl; return 1;}
-	a.resize(n);
-	std::cout << "Resized array: ";
-	print(a);
-	std::cout << "\n" << std::endl;
+	catch(int thr){std::cout << "Error n." << thr << ": Value must be >= 0." << std::endl;}
+
 	std::cout << "Enter value and index of new element you wish to add into array: ";
 	std::cin >> n >> i;	
 	a.addval(n, i);
