@@ -6,7 +6,6 @@ int main()
 	int n, i;
 	std::cout << "Enter desired array length: ";
 	std::cin >> n;	
-	check(n);
 	Array a(n);
 	ini(a); // array 'a' init
 	std::cout << "New generated array: ";
@@ -15,7 +14,11 @@ int main()
 	std::cout << "Array length is: " << a.getLength() << " elements\n" << std::endl;
 	std::cout << "Enter new length for the array: ";
 	std::cin >> n;	
-	check(n);
+	try 
+	{
+		if(n < 0){throw 1;}
+	}
+	catch(int thr){std::cout << "Error n." << thr << ": Value must be >= 0." << std::endl; return 1;}
 	a.resize(n);
 	std::cout << "Resized array: ";
 	print(a);

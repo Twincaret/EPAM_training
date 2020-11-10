@@ -1,7 +1,5 @@
 #include "cont.h"
 
-int check(int n) {if(n < 0) std::cerr << "Wrong value, try again."; return 1;}
-
 void Array::resize(int x_len) 
 {
 	if(x_len == length) return;
