@@ -22,7 +22,7 @@ int main()
 		print(a);
 		std::cout << "\n" << std::endl;
 	}
-	catch(int thr){std::cout << "Error n." << thr << ": Value must be >= 0." << std::endl;}
+	catch(int thr){std::cerr << "Error n." << thr << ": Value must be >= 0." << std::endl;}
 
 	std::cout << "Enter value and index of new element you wish to add into array: ";
 	std::cin >> n >> i;	
@@ -39,3 +39,4 @@ int main()
 	return 0;	
 
 }
+//sort && search algorithm
