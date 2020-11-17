@@ -50,8 +50,7 @@ public:
 	/* generate new array */
 	int dice_roll();
 	void ini(Array &a);	
-	/* check array length */
-	int check(int n);	
+	
 };
 
 #endif

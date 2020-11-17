@@ -58,6 +58,65 @@ void print(Array &a)
 	for(int i = 0; i < a.getLength(); ++i)
 		std::cout << a[i] << " ";
 }
+
+void quickSort(Array &a, int left, int right)
+{
+	int point; // permitting element point
+	int l_hold = left; // left border
+	int r_hold = right; // right border
+	point = a[left];
+	while (left < right) // while the borders aren't close
+	{
+		while ((a[right] >= point) && (left < right)) --right; // slide right border while [right] more than [point]
+		if (left != right) // if borders aren't close
+		{
+			a[left] = a[right]; // move the [right] element to the place of the permitting element
+			++left; // slide left border to the right
+		}
+		while ((a[left] <= point) && (left < right)) ++left; // slide left border while [left] less than [point]
+		if (left != right) // if the borders aren't close
+		{
+			a[right] = a[left]; // moving the [left] element to the place of the [right] element
+			--right; // slide right border to the right
+		}
+	}
+	a[left] = point; // moving permitting element on its place
+	point = left;
+	left = l_hold;
+	right = r_hold;
+	if (left < point) // recursion calling of the quickSort func for left && right parts of the array
+		quickSort(a, left, point - 1);
+	if (right > point)
+		quickSort(a, point + 1, right);
+}
+
+int binsearch(Array &a, int x) 
+{
+    int l = 0, r = a.getLength() - 1;
+
+	while(r > l)
+    {
+        int m = (l + r) / 2;    // integer division
+
+        if(a[m] < x) 
+        {
+            l = m + 1;
+        } else if(a[m] > x) 
+        {
+			r = m - 1;
+		} else 
+		{
+			return m;
+		}
+    }
+
+    // l == r == sought index
+
+    // if sought element wasn't found, binary search will find next element after it
+    // additional comparison to recognize it
+    if(a[l] == x) {return l;} else {return -1;}
+}
+
 //====================================================================================
 int dice_roll() // PRNG                                                               
 {                                                                                     
