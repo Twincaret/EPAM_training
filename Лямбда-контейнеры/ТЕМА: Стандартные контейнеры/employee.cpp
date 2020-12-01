@@ -17,7 +17,7 @@ public:
     }
     void putdata()const
     {
-        cout << "\nName " << name << "\nNumber " << numb;
+        cout << "\nName " << name << "\nNumber " << numb << endl;
     }
 };
     
@@ -37,10 +37,9 @@ int main()
  
     for( int i = 0; i < n; ++i )
     {
-        cout << "\nEmployee " << i + 1;  e[i].putdata();
+        cout << "Employee " << i + 1;  e[i].putdata();
         cout << endl;
     }
-    cout << endl;
  
     return 0;
 }
