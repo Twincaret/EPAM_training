@@ -22,8 +22,8 @@ class Circle : public FigureShape
 public:
 	Circle (double _r) : r(_r) {}
     ~Circle () {}
-    double Area() const {return 3.14*r*r;}
-    double Perimetr() const {return 3.14*2*r;}
+    double Area() const {return 3.14 * r * r;}
+    double Perimetr() const {return 3.14 * 2 * r;}
     void Show() const {cout<<"Circle"<<endl;}
 
 };
@@ -35,7 +35,7 @@ public:
 	Square(double _a) : a(_a) {}
     ~Square () {}
     double Area() const {return a * a;}
-    double Perimetr() const {return 2*(a + a);}
+    double Perimetr() const {return 2 * (a + a);}
     void Show() const {cout<<"Square"<<endl;}
 };
 
@@ -127,7 +127,7 @@ int main()
 		r.setSize(Vector2f(180, 115));
         r.setPosition(360, 48);
 		r.setFillColor(Color(181, 0, 0));
-		s.setOutlineColor(Color(255, 255, 255));
+		r.setOutlineColor(Color(255, 255, 255));
 		r.setOutlineThickness(2);
 
 		/* Octagon */
