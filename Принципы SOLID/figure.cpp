@@ -70,13 +70,13 @@ int main()
 		
 	vector<FigureShape*> v;
 	FigureShape* ptr = nullptr;
-    ptr = new Circle(22.56);    
+    ptr = new Circle(65.f);    
     v.push_back(ptr);
-    ptr = new Square(10.56);
+    ptr = new Square(80.f);
     v.push_back(ptr);   
-    ptr = new Rectangle(12.0, 18.0);
+    ptr = new Rectangle(180.f, 115.f);
     v.push_back(ptr);   
-    ptr = new Octagon(3.75);
+    ptr = new Octagon(65.f);
     v.push_back(ptr);
     
     double sum_a,  sum_p;
