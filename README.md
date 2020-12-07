@@ -185,7 +185,7 @@
 </details>
 
 <details>
-  <summary>Тема 10. Принципы SOLID</summary>
+  <summary>Принципы SOLID</summary>
 
   ***
 

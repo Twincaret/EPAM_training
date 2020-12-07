@@ -6,17 +6,17 @@
 using namespace std;
 using namespace sf;
  
-class Figure
+class FigureShape
 {
 public:
 
     virtual double Area() const = 0;
     virtual double Perimetr() const = 0;
     virtual void Show() const = 0;
-    virtual ~Figure() {}
+    virtual ~FigureShape() {}
 };
  
-class Circle : public Figure
+class Circle : public FigureShape
 {
     double r;
 public:
@@ -28,7 +28,7 @@ public:
 
 };
 
-class Square : public Figure
+class Square : public FigureShape
 {
     double a;
 public:
@@ -39,7 +39,7 @@ public:
     void Show() const {cout<<"Square"<<endl;}
 };
 
-class Rectangle : public Figure
+class Rectangle : public FigureShape
 {
     double a, b;
 public:
@@ -50,7 +50,7 @@ public:
     void Show() const {cout<<"Rectangle"<<endl;}
 };
  
-class Octagon : public Figure
+class Octagon : public FigureShape
 {
     double a;
 public:
@@ -68,8 +68,8 @@ int main()
 	set.antialiasingLevel = 8;
 	RenderWindow window(VideoMode(750, 200), "Solid Figure");
 		
-	vector<Figure*> v;
-	Figure* ptr = nullptr;
+	vector<FigureShape*> v;
+	FigureShape* ptr = nullptr;
     ptr = new Circle(22.56);    
     v.push_back(ptr);
     ptr = new Square(10.56);
