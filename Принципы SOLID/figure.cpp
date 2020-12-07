@@ -79,7 +79,8 @@ int main()
     ptr = new Octagon(65.f);
     v.push_back(ptr);
     
-    double sum_a,  sum_p;
+    double sum_a = 0.f;
+    double sum_p = 0.f;
     	
 	for (auto i : v)
     {
